@@ -238,7 +238,7 @@ DEPENDENCIES
   capybara
   debug
   haml
-  haml-rails
+  haml-rails (~> 2.0)
   importmap-rails
   jbuilder
   mysql2 (~> 0.5)

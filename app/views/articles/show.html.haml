@@ -1,0 +1,21 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", :name => "viewport"}/
+    %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title Show Article
+  %body
+    %h1= @article.title
+    %p= @article.body
+    %ul
+      %li= link_to "Edit", edit_article_path(@article)
+      %li= link_to "Destroy", article_path(@article), data: { |
+            turbo_method: :delete,                           |
+            turbo_confirm: "Are you sure?"                   |
+          }                                                  |
+    %h2 Add a comment:
+    = render 'comments/form'
+    %h2 Comments
+    = render @article.comments

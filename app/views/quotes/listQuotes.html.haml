@@ -1,0 +1,7 @@
+=render :partial => "header"
+%ul
+  -@quotes.each do |quote|
+    %li
+      %a{:href => "show/#{quote.id}"}
+        =quote.name
+      .quote__action

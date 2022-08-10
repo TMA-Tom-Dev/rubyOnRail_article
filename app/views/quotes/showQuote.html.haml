@@ -1,0 +1,8 @@
+=render :partial => 'header'
+%a{:href => "/quote/list"} Back
+
+%h2=@quote.name
+=render :partial =>  "form" , quote:@quote
+%form{method: :deleteQuote, action: "delete/#{@quote.id}"}
+  =csrf_meta_tags
+  %input{type:"submit",class:"btn btn--light", value:"Delete"}
